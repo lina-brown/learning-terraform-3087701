@@ -30,6 +30,11 @@ resource "aws_instance" "web" {
   }
 }
 
+module "security-group" {
+  source  = "terraform-aws-modules/security-group/aws"
+  version = "5.3.0"
+}
+
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.3.0"
